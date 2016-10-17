@@ -19,34 +19,28 @@ end Milestone3;
 
 architecture Behavioral of Milestone3 is
 signal counter1, counter2: std_logic_vector(7 downto 0) := x"00";
+signal onesDigit, tensDigit: integer := 0;
 
--- 4 bits to hexfile
-function hex_display (nibble: std_logic_vector(3 downto 0)) 
+-- unsigned integer to hexfile
+function hex_display (int: integer ) 
 return std_logic_vector is
 variable return_value : std_logic_vector(0 to 6) := "1001001";
 begin
-	case nibble  is
-		when x"0" => return_value :=  "1111110";
-		when x"1" => return_value :=  "0110000";
-		when x"2" => return_value :=  "1101101";
-		when x"3" => return_value :=  "1111001";
-		when x"4" => return_value :=  "0110011";
-		when x"5" => return_value :=  "1011011";
-		when x"6" => return_value :=  "1011111";
-		when x"7" => return_value :=  "1110000";
-		when x"8" => return_value :=  "1111111";
-		when x"9" => return_value :=  "1111011";
-		when x"A" => return_value :=  "1110111";
-		when x"B" => return_value :=  "0011111";
-		when x"C" => return_value :=  "1001110";
-		when x"D" => return_value :=  "0111101";
-		when x"E" => return_value :=  "1001111";
-		when x"F" => return_value :=  "1000111";
+	case int  is
+		when 0 => return_value :=  "1111110";
+		when 1 => return_value :=  "0110000";
+		when 2 => return_value :=  "1101101";
+		when 3 => return_value :=  "1111001";
+		when 4 => return_value :=  "0110011";
+		when 5 => return_value :=  "1011011";
+		when 6 => return_value :=  "1011111";
+		when 7 => return_value :=  "1110000";
+		when 8 => return_value :=  "1111111";
+		when 9 => return_value :=  "1111011";
 		when others => return_value := "1001001";
 	end case;
-
-	return not return_value;
-	
+	--invert because active low
+	return not return_value;	
 end hex_display;
 
 begin	
@@ -73,6 +67,9 @@ begin
 	end process;
 	
 	-- output results to hex displays
-	HEX1 <= hex_display(std_logic_vector(counter2(7 downto 4)));
-	HEX0 <= hex_display(std_logic_vector(counter2(3 downto 0)));	
+	onesDigit <= to_integer(counter2) mod 10;
+	tensDigit <= (to_integer(counter2) mod 100) / 10;
+
+	HEX1 <= hex_display(std_logic_vector(tensDigit);
+	HEX0 <= hex_display(std_logic_vector(onesDigit);	
 end architecture; 
