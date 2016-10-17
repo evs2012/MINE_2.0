@@ -67,9 +67,9 @@ begin
 	end process;
 	
 	-- output results to hex displays
-	onesDigit <= to_integer(counter2) mod 10;
-	tensDigit <= (to_integer(counter2) mod 100) / 10;
+	onesDigit <= to_integer(unsigned(counter2)) mod 10;
+	tensDigit <= (to_integer(unsigned(counter2)) mod 100) / 10;
 
-	HEX1 <= hex_display(std_logic_vector(tensDigit);
-	HEX0 <= hex_display(std_logic_vector(onesDigit);	
+	HEX1 <= hex_display(tensDigit);
+	HEX0 <= hex_display(onesDigit);	
 end architecture; 
