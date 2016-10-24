@@ -22,7 +22,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
     int opResult = RS232_SendByte(comport_number,(uint8_t)value);
-    if (opResult = -1)
+    if (opResult == -1)
     {
         ///Failed
         QMessageBox failed_message;
@@ -30,7 +30,7 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
         failed_message.exec();
 
     }
-    else if (opResult = 1)
+    else if (opResult == 1)
     {
         ///Sent 1 byte (as expected)
     }
@@ -38,7 +38,7 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
     {
         ///Unexpected result
         QMessageBox unexpected_result;
-        unexpected_result.setText("Error: Unexpected Result");
+        unexpected_result.setText("Error: Unexpected Result " + opResult);
         unexpected_result.exec();
     }
 }

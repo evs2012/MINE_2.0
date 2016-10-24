@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    rs232.c
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    rs232.h
 
 FORMS    += mainwindow.ui
