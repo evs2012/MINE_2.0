@@ -42,8 +42,8 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
     else
     {
        ///Unexpected result
-       QMessageBox unexpected_result;
-       unexpected_result.setText("Error: Transmission successful ");
-       unexpected_result.exec();
+       QMessageBox msg;
+       msg.setText("Transmission successful ");
+       msg.exec();
     }
 }
