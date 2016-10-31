@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 
 const int comport_number = 0;
-const int baudrate = 9600;
+const int baudrate = 115200;
 const char * mode = "8N1";
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -10,8 +10,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    int i ;
 
-    RS232_OpenComport(comport_number,baudrate, mode);
+    i = RS232_OpenComport(comport_number,baudrate, mode);
+
+    if (i ==1)
+    {
+        QMessageBox failed_open;
+        failed_open.setText("Error: Opening Failed.");
+        failed_open.exec();
+    }
+
 }
 
 MainWindow::~MainWindow()
@@ -22,7 +31,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
     int opResult = RS232_SendByte(comport_number,(uint8_t)value);
-    if (opResult == -1)
+    if (opResult == 1)
     {
         ///Failed
         QMessageBox failed_message;
@@ -30,15 +39,11 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
         failed_message.exec();
 
     }
-    else if (opResult == 1)
-    {
-        ///Sent 1 byte (as expected)
-    }
     else
     {
-        ///Unexpected result
-        QMessageBox unexpected_result;
-        unexpected_result.setText("Error: Unexpected Result " + opResult);
-        unexpected_result.exec();
+       ///Unexpected result
+       QMessageBox unexpected_result;
+       unexpected_result.setText("Error: Transmission successful ");
+       unexpected_result.exec();
     }
 }
