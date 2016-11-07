@@ -14,9 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    rs232.c
+    rs232.c \
+    bmp_file.cpp
 
 HEADERS  += mainwindow.h \
-    rs232.h
+    rs232.h \
+    bmp_file.h
 
 FORMS    += mainwindow.ui
