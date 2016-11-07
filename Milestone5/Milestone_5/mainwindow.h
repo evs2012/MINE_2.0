@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "rs232.h"
+#include <QMessageBox>
 
 namespace Ui {
 class MainWindow;
