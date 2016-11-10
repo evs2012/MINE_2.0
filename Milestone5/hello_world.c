@@ -10,6 +10,7 @@
 
 void SetSourceImage()
 {
+	// TODO: Write to source image buffer as well as the monitor via VGA
 	// First byte was read, everything that follows starts the data
 	volatile short * pixel_buffer = (short *) 0x08000000; // Pixel buffer
 	int x = 0;	// x and y offset with top left as 0,0
@@ -57,7 +58,22 @@ void SetSourceImage()
 
 void setOverlayImage()
 {
+	// TDOD: implement this to dump image in memory
+}
 
+void adjustBrightness(int value)
+{
+	// TODO: this
+}
+
+void adjustBrightness(int value)
+{
+	// TODO: this
+}
+
+void updateVGA()
+{
+	// TODO: this, code is in the source image function
 }
 
 int main()
