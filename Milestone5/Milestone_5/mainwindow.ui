@@ -23,6 +23,11 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Transfer Test Image</string>
     </property>
@@ -35,6 +40,11 @@
       <width>111</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Transfer Overlay Image</string>
@@ -75,6 +85,11 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Brightness</string>
     </property>
@@ -88,6 +103,11 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Contrast</string>
     </property>
@@ -99,7 +119,7 @@
      <x>0</x>
      <y>0</y>
      <width>321</width>
-     <height>17</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
