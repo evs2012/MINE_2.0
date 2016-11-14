@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>321</width>
-    <height>202</height>
+    <width>500</width>
+    <height>300</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -17,9 +23,9 @@
    <widget class="QPushButton" name="TransferTest">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>30</y>
-      <width>111</width>
+      <width>200</width>
       <height>21</height>
      </rect>
     </property>
@@ -30,9 +36,9 @@
    <widget class="QPushButton" name="TransferOverlay">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>240</x>
       <y>30</y>
-      <width>111</width>
+      <width>200</width>
       <height>21</height>
      </rect>
     </property>
@@ -43,11 +49,17 @@
    <widget class="QSlider" name="BrightnessSlider">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>70</y>
+      <x>150</x>
+      <y>80</y>
       <width>160</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="minimum">
+     <number>-127</number>
+    </property>
+    <property name="maximum">
+     <number>127</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -56,11 +68,17 @@
    <widget class="QSlider" name="ContrastSlider">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>110</y>
+      <x>150</x>
+      <y>130</y>
       <width>160</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="sliderPosition">
+     <number>100</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -69,9 +87,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>80</y>
-      <width>41</width>
+      <x>200</x>
+      <y>90</y>
+      <width>100</width>
       <height>20</height>
      </rect>
     </property>
@@ -82,9 +100,9 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>120</y>
-      <width>41</width>
+      <x>200</x>
+      <y>140</y>
+      <width>100</width>
       <height>20</height>
      </rect>
     </property>
@@ -98,7 +116,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>321</width>
+     <width>500</width>
      <height>17</height>
     </rect>
    </property>
